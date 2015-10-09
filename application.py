@@ -37,13 +37,15 @@ def valid_number():
             return number
         except ValueError:
             reset()
-            print "Only can insert numbers"
+            print "*Only can insert numbers\n"
     return number
 
 def print_factorial():
     """This ask the number to show the factorial"""
     number = valid_number()
-    print factorial(number)
+    factorial_number = str(factorial(number))
+    reset()
+    print "\n\n*The factorial of >%d< is %s *" % (number, factorial_number)
 
 def print_other_factorial():
     """This ask is want to see other number"""
