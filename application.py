@@ -37,12 +37,23 @@ def valid_number():
             return number
         except ValueError:
             reset()
-            print "*Only can insert numbers\n"
+            print "*Only can insert numbers integers\n"
     return number
+
+def valid_number_lesser_997():
+    valid = valid_number()
+    while True:
+        if valid > 996:
+            print "Number too high, insert a number lesser"
+            raw_input("Press -Enter- ")
+            valid = valid_number()
+        else:
+            return valid
+    return valid
 
 def print_factorial():
     """This ask the number to show the factorial"""
-    number = valid_number()
+    number = valid_number_lesser_997()
     factorial_number = str(factorial(number))
     reset()
     print "\n\n*The factorial of >%d< is %s *" % (number, factorial_number)
@@ -61,7 +72,6 @@ def print_other_factorial():
         else:
             reset()
             print "Only can write -y- or -n-\n"
-
 
 def menu():
     """This saves the menu"""
